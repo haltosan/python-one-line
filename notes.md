@@ -100,3 +100,20 @@ with supress: x = 1/0
 # x is 1, and no error is thrown
 ```
 
+## throw error
+`raise Exception('hi')`  
+->
+`(_ for _ in ()).throw(Exception('hi'))`  
+
+# other
+## import
+```
+import math
+math.inf
+```
+->
+```
+[math.inf
+for math in [__import__('math')]
+]
+```
