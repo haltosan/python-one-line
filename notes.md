@@ -102,6 +102,16 @@ with supress: x = 1/0
 ```
 with type('obj', (object,), {'__enter__': lambda self : True, '__exit__' : lambda self, *args : True})(): x = 1/0
 ```
+Or  
+```
+import contextlib
+with contextlib.supress(Exception):
+  x = 1/0
+```
+->
+```
+with __import__('contextlib').suppress(Exception): x = 1/0
+```
 
 ## throw error
 `raise Exception('hi')`  
