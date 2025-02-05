@@ -105,7 +105,7 @@ with type('obj', (object,), {'__enter__': lambda self : True, '__exit__' : lambd
 
 ## throw error
 `raise Exception('hi')`  
-->
+->  
 `(_ for _ in ()).throw(Exception('hi'))`  
 
 # other
