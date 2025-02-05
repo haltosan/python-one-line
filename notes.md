@@ -89,7 +89,6 @@ a.x()
 
 # control flow
 ## error supression
-->
 ```
 class Supress:
   def __enter__(self): pass
@@ -98,6 +97,10 @@ supress = Supression()
 with supress: x = 1
 with supress: x = 1/0
 # x is 1, and no error is thrown
+```
+->
+```
+with type('obj', (object,), {'__enter__': lambda self : True, '__exit__' : lambda self, *args : True})(): x = 1/0
 ```
 
 ## throw error
